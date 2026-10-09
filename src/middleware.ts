@@ -1,4 +1,4 @@
-import { type NextRequest } from 'next'
+import { type NextRequest } from 'next/server'
 import { updateSession } from '@/utils/supabase/middleware'
 
 export async function middleware(request: NextRequest) {
@@ -11,8 +11,8 @@ export const config = {
      * Aplica el middleware a todas las rutas excepto:
      * - _next/static (archivos estáticos)
      * - _next/image (optimización de imágenes)
-     * - favicon.ico (icono del sitio)
-     * - archivos con extensión (imágenes, svg, etc.)
+     * - favicon.ico (ícono de la app)
+     * - archivos con extensiones (.svg, .png, .jpg, etc.)
      */
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
